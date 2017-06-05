@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Image, View, Button, Text, ScrollView, KeyboardAvoidingView,} from 'react-native';
-import {StackNavigator,NavigationActions} from 'react-navigation';
+import {StackNavigator, NavigationActions} from 'react-navigation';
 import Navigator from '../common/TabNavigator';
 
 import Input from '../components/InputComponent';
@@ -9,8 +9,9 @@ import ThirdScreen from './ThirdScreen';
 import GankPage from './GankPage';
 import BlogPage from './BlogPage';
 import PersonalInfoPage from './PersonalInfoPage';
+import WebPage from './WebPage';
 
- class LoginPage extends Component {
+class LoginPage extends Component {
 
     static navigationOptions = {
         headerTitle: "登录",
@@ -32,7 +33,7 @@ import PersonalInfoPage from './PersonalInfoPage';
                         <View style={styles.imageStyle}>
                             <Image style={styles.imageSize} source={require('../images/logo.png')}/>
                         </View>
-                        <Text style={{color:'#b3b3b3'}}>干货集中营 x 博客</Text>
+                        <Text style={{color: '#b3b3b3'}}>干货集中营 x 博客</Text>
                         <Input ref="user" text="账号"/>
                         <Input ref="password" text="密码" isPwd={true}/>
                         <View style={styles.buttonStyle}>
@@ -47,12 +48,13 @@ import PersonalInfoPage from './PersonalInfoPage';
 
 const SimpleApp = StackNavigator({
     Login: {screen: LoginPage},
-    Main: {screen:Navigator},
-    Home :{screen:HomePage},
+    Main: {screen: Navigator},
+    Home: {screen: HomePage},
     Next: {screen: ThirdScreen},
     Gank: {screen: GankPage},
     Blog: {screen: BlogPage},
-    PersonalInfo: {screen: PersonalInfoPage}
+    PersonalInfo: {screen: PersonalInfoPage},
+    Web:{screen:WebPage}
 }, {
     initialRouteName: 'Login',
     navigationOptions: {
@@ -92,10 +94,10 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 50,
     },
-    imageStyle:{
-        flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center'
+    imageStyle: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
 

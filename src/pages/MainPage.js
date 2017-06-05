@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, SectionList, Dimensions, Image, ActivityIndicator} from 'react-native';
+import {StyleSheet, View, Text, SectionList, Dimensions, Image, ActivityIndicator,TouchableHighlight} from 'react-native';
 import HomeSectionListItem from '../components/HomeSectionListItem';
 
 const {width, height} = Dimensions.get("window");
@@ -13,12 +13,14 @@ export default class HomePage extends Component {
             size: {width, height},
             date: '',
             showLoadView: true,
+            refreshing:true,
             homeImage: 'https://facebook.github.io/react/img/logo_og.png',
             androidList: [],
             iosList: [],
             frontendList: [],
             recommendList: [],
             videoList: [],
+            resourceList:[]
         };
         this._loadData();
     }
@@ -30,6 +32,7 @@ export default class HomePage extends Component {
 
 
     _loadData = () => {
+        console.log("loadData...");
         fetch('http://gank.io/api/day/history')
             .then((res) => res.json())
             .then((responseJSON) => {
@@ -47,11 +50,13 @@ export default class HomePage extends Component {
                         this.setState({
                             homeImage: responseJson.results.福利[0].url,
                             showLoadView: false,
+                            refreshing:false,
                             videoList: this._handleData(responseJson.results.休息视频),
                             androidList: this._handleData(responseJson.results.Android),
                             iosList: this._handleData(responseJson.results.iOS),
                             frontendList: this._handleData(responseJson.results.前端),
-                            recommendList: this._handleData(responseJson.results.瞎推荐)
+                            recommendList: this._handleData(responseJson.results.瞎推荐),
+                            resourceList:this._handleData(responseJson.results.拓展资源)
                         });
                     })
             })
@@ -80,8 +85,12 @@ export default class HomePage extends Component {
     };
 
     _handleListItem = ({item}) => {
-        return <HomeSectionListItem author={item.who} title={item.desc}
+        return (
+            <TouchableHighlight underlayColor='#51c4fe' onPress={() => this.props.navigation.navigate('Web',{url:item.url,title:item.desc})}>
+            <HomeSectionListItem author={item.who} title={item.desc}
                                     imageUrl={typeof (item.images) !== 'undefined'? item.images[0] : "https://facebook.github.io/react/img/logo_og.png"}/>
+            </TouchableHighlight>
+        )
     };
 
     _handleData = (list) => {
@@ -96,6 +105,8 @@ export default class HomePage extends Component {
                     <ActivityIndicator size='large' animating={this.state.showLoadView} color='#51c4fe'/> :
                     <View style={styles.container}>
                         <SectionList
+                            refreshing={this.state.refreshing}
+                            onRefresh={this._loadData}
                             renderItem={this._handleListItem}
                             renderSectionHeader={this._handleSectionHeader}
                             ListHeaderComponent={this._handleHeader}
@@ -104,6 +115,7 @@ export default class HomePage extends Component {
                                     {data: this.state.androidList, key: "Android"},
                                     {data: this.state.iosList, key: "iOS"},
                                     {data: this.state.frontendList, key: "前端"},
+                                    {data:this.state.resourceList,key:'拓展资源'},
                                     {data: this.state.recommendList, key: "瞎推荐"},
                                     {data: this.state.videoList, key: "休息视频"},
                                 ]
