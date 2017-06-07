@@ -4,8 +4,9 @@ import {TabNavigator} from 'react-navigation';
 
 import HomePage from '../pages/MainPage'
 import MessagePage from '../pages/GankPage';
-import ContactsPage from '../pages/BlogPage';
+import BlogPage from '../pages/BlogPage';
 import PersonalInfoPage from '../pages/PersonalInfoPage';
+import GankPage from './GankTabNav';
 
 const Navigator = TabNavigator({
     One: {
@@ -17,7 +18,7 @@ const Navigator = TabNavigator({
         }
     },
     Two: {
-        screen: MessagePage, navigationOptions: {
+        screen: GankPage, navigationOptions: {
             tabBarIcon: (({focused}) => focused ?
                     <Image source={require('../images/two_selected.png')} style={styles.pageIcon}/> :
                     <Image source={require('../images/two_normal.png')} style={styles.pageIcon}/>
@@ -25,7 +26,7 @@ const Navigator = TabNavigator({
         }
     },
     Three: {
-        screen: ContactsPage, navigationOptions: {
+        screen: BlogPage, navigationOptions: {
             tabBarIcon: (({focused}) => focused ?
                     <Image source={require('../images/three_selected.png')} style={styles.pageIcon}/> :
                     <Image source={require('../images/three_normal.png')} style={styles.pageIcon}/>

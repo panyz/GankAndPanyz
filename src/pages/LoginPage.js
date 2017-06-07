@@ -6,10 +6,11 @@ import Navigator from '../common/TabNavigator';
 import Input from '../components/InputComponent';
 import HomePage from './MainPage';
 import ThirdScreen from './ThirdScreen';
-import GankPage from './GankPage';
 import BlogPage from './BlogPage';
 import PersonalInfoPage from './PersonalInfoPage';
 import WebPage from './WebPage';
+import GankPage from '../common/GankTabNav';
+
 
 class LoginPage extends Component {
 
@@ -54,7 +55,7 @@ const SimpleApp = StackNavigator({
     Gank: {screen: GankPage},
     Blog: {screen: BlogPage},
     PersonalInfo: {screen: PersonalInfoPage},
-    Web:{screen:WebPage}
+    Web: {screen: WebPage}
 }, {
     initialRouteName: 'Login',
     navigationOptions: {

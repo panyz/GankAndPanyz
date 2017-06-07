@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text,} from 'react-native';
+import GankTab from '../common/GankTabNav';
 
 export default class GankPage extends Component {
     static navigationOptions = {
