@@ -3,7 +3,7 @@ import {StyleSheet, Image, View, Button, Text, ScrollView, KeyboardAvoidingView,
 
 export default class PersonalInfo extends Component{
     static navigationOptions = {
-        headerTitle: "个人中心",
+        headerTitle: "我",
     };
     render(){
         return(

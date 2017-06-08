@@ -5,10 +5,14 @@ const windowSize = Dimensions.get('window');
 
 export default class GankListItemComponent extends Component {
 
+    setNativeProps(nativeProps) {
+        this._root.setNativeProps(nativeProps);
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <Image style={styles.imageStyle} source={{uri: this.props.imageUrl}}/>
+                <Image style={styles.imageStyle} source={{uri: this.props.imageUrl}} ref={component => this._root = component}/>
                 <View>
                     <Text style={styles.textStyle}>{this.props.author}</Text>
                     <Text style={[{fontSize:16,paddingRight:5,width:2/3*windowSize.width},styles.textStyle]} numberOfLines={3}>

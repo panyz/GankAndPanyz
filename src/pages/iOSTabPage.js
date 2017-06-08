@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text,FlatList, ActivityIndicator} from 'react-native';
+import {StyleSheet, View, TouchableHighlight,FlatList, ActivityIndicator} from 'react-native';
 
 const defaultImage = 'https://facebook.github.io/react/img/logo_og.png';
 import GankListItem from '../components/GankListItemComponent';
@@ -38,10 +38,15 @@ export default class iOSTabPage extends Component {
 
     _renderListItem = ({item}) => {
         return (
+            <TouchableHighlight underlayColor='#51c4fe' onPress={() => this.props.navigation.navigate('Web', {
+                url: item.url,
+                title: item.desc
+            })}>
             <GankListItem author={item.who === null ? "佚名" : item.who}
                           title={item.desc}
                           imageUrl={typeof(item.images) !== 'undefined' ? item.images[0] : defaultImage}
             />
+            </TouchableHighlight>
         )
     };
 
