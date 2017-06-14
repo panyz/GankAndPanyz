@@ -21,7 +21,6 @@ export default class AndroidTabPage extends Component {
         fetch('http://gank.io/api/random/data/Android/15')
             .then((res) => res.json())
             .then((responseJson) => {
-                console.log(responseJson.results);
                 this.setState({
                     results: responseJson.results,
                     showLoadView: false,

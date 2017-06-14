@@ -20,7 +20,6 @@ export default class iOSTabPage extends Component {
         fetch('http://gank.io/api/random/data/iOS/15')
             .then((res) => res.json())
             .then((responseJson) => {
-                console.log(responseJson.results);
                 this.setState({
                     results: responseJson.results,
                     showLoadView: false,
