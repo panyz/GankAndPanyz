@@ -11,14 +11,13 @@ export default class BlogPage extends Component{
         this.state = {
             results:[],
         };
-        this._loadData();
+        // this._loadData();
     }
 
     _loadData = () => {
         fetch('https://api.github.com/repos/panyz/Blogs/issues')
             .then((res) => res.json())
             .then((responseJson) => {
-                console.log(responseJson);
                 this.setState({
                     results:responseJson,
                 });
