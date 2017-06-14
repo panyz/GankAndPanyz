@@ -11,7 +11,7 @@ export default class BlogPage extends Component{
         this.state = {
             results:[],
         };
-        // this._loadData();
+        this._loadData();
     }
 
     _loadData = () => {
