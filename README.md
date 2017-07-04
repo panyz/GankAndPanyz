@@ -1,5 +1,5 @@
 # GankAndPanyz
-这是一个完全由React Native开发的App，里面的数据内容来自gank.io（干货集中营）和记录在自己GitHub上的一些博客笔记。
+这是一个完全由React Native开发的App，里面的数据内容来自gank.io（干货集中营）和记录在自己GitHub上的一些博客笔记。(目前尚未适配iOS端)
 
 使用创建应用的脚手架工具为create-react-native-app,具体的使用教程可以参考这篇教程[《React Native高效开发》之create-react-native-app](https://juejin.im/post/58d8ef5f44d9040069444989)
 
