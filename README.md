@@ -13,9 +13,9 @@
 
 ![登录界面](http://upload-images.jianshu.io/upload_images/2355123-3c888af06e5bb278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![首页1](http://upload-images.jianshu.io/upload_images/2355123-c44638b160aec5dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 ![首页1](http://upload-images.jianshu.io/upload_images/2355123-7b9b8c5d35674010.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![首页1](http://upload-images.jianshu.io/upload_images/2355123-c44638b160aec5dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![干货分类](http://upload-images.jianshu.io/upload_images/2355123-6a7865f4d0bddb56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
