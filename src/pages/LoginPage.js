@@ -32,7 +32,7 @@ class LoginPage extends Component {
                 <KeyboardAvoidingView behavior='padding'>
                     <View style={styles.cardStyle}>
                         <View style={styles.imageStyle}>
-                            <Image style={styles.imageSize} source={require('../images/logo.png')}/>
+                            <Image style={styles.imageSize} source={require('../images/blog.png')}/>
                         </View>
                         <Text style={{color: '#b3b3b3'}}>干货集中营 x 博客</Text>
                         <Input ref="user" text="账号"/>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     imageSize: {
-        height: 100
+        // height: 100
     },
     buttonStyle: {
         width: 250,
